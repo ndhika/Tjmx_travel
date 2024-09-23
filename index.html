@@ -20,9 +20,26 @@
     </script>
 </head>
 <body>
-    <section class="bg-banner h-screen bg-cover pt-10 md:pt-6 lg:pt-12">
-        <img src="assets/icon/icon.png" width="100" height="30" class="mx-auto">
-        <div class="w-10/12 md:w-7/12 lg:w-6/12 text-center mx-auto mt-10 md:mt-16 lg:mt-24">
+    <section class="h-screen bg-cover items-center">
+        <div class="absolute inset-0 z-10 w-full h-full flex" id="background-carousel">
+            <script>
+                const images = [
+                    'assets/image/header.jpg',
+                    'assets/image/header.jpg',
+                    'assets/image/header.jpg',
+                ];
+
+                images.forEach(image => {
+                    document.write(
+                        `<img src="${image}" class="w-full h-full object-cover relative z-10" alt="Image">`
+                    );
+                });
+            </script>
+        </div>
+        <div class="absolute z-20 mx-auto relative z-20 w-fit mt-5">
+            <img src="assets/icon/icon.png" width="100" height="30" class="">
+        </div>
+        <div class="w-10/12 md:w-7/12 lg:w-6/12 text-center mx-auto mt-10 md:mt-16 lg:mt-24 relative z-20">
             <h1 class="text-white text-5xl md:text-6xl lg:text-7xl">Bersama Kami Perjalanan Lebih Mudah</h1>
             <h1 class="text-white md:text-2xl lg:text-3xl font-bold mt-4">Perjalanan Nyaman, Tujuan Cepat</h1>
             <div class="mt-36 flex gap-4 justify-center">
@@ -35,5 +52,9 @@
             </div>
         </div>
     </section>
+    <section class="h-screen">
+
+    </section>
+    <script src="banner-background-carousel.js"></script>
 </body>
 </html>
