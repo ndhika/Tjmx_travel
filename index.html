@@ -21,7 +21,7 @@
 </head>
 <body>
     <section class="h-screen bg-cover items-center">
-        <div class="absolute inset-0 z-10 w-full h-full flex overflow-hidden" id="background-carousel">
+        <div class="absolute inset-0 z-10 w-full h-full overflow-hidden" id="background-carousel">
             <script>
                 const images = [
                     'assets/image/header.jpg',
@@ -29,17 +29,27 @@
                     'assets/image/header2.jpg',
                 ];
                 let active = 0;
+                let index = 0;
                 function Carousel(){
-                    const carousels = images.map((images, index) => {
-                        return `<img src="${images}" class="w-full h-full ${index === active ? 'block' : 'hidden' } object-cover relative z-10" alt="Image">`
-                    });
-                    document.getElementById('background-carousel').innerHTML = carousels;
+                    const carousels = images.map((images) => {
+                        return `<img src="${images}" class="w-screen h-screen object-cover lg: z-10" alt="Image">`
+                    }).join('');
+                    return carousels;
                 }
-                Carousel();
+                const carouselDiv = document.createElement('div');
+                carouselDiv.className = "flex transition-transform duration-500 ease-in-out";
+                document.getElementById('background-carousel').appendChild(carouselDiv);
+                carouselDiv.innerHTML = Carousel();
+                function updatedCarousel(){
+                    carouselDiv.style.transform = `translateX(-${index * 100}%)`;
+                }
+                updatedCarousel();
                 setInterval(() => {
                     active = (active + 1) % images.length;
-                    Carousel();
+                    index = (index + 1) % images.length;
+                    updatedCarousel();
                     console.log(active);
+                    console.log(index);
                 }, 4000);
             </script>
         </div>
