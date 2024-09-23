@@ -5,11 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TjmxTravel</title>
     <link rel="icon" href="assets/icon/Tjmx_travel.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/3ab26b6439.js" crossorigin="anonymous"></script> 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme : {
+                extend : {
+                    backgroundImage : {
+                        'banner' : "url('assets/image/header.jpg')"
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body>
-    <section class="bg-banner-background">
-        <img src="assets/icon/icon.png" width="100" height="30" class="mx-auto mt-5">
+    <section class="bg-banner h-screen bg-cover pt-12">
+        <img src="assets/icon/icon.png" width="100" height="30" class="mx-auto">
+        <div class="w-6/12 text-center mx-auto mt-24">
+            <h1 class="text-white text-7xl">Bersama Kami Perjalanan Lebih Mudah</h1>
+            <h1 class="text-white text-3xl font-bold mt-4">Perjalanan Nyaman, Tujuan Cepat</h1>
+            <div class="mt-36 flex gap-4 justify-center">
+                <a href="https://wa.me/6285137666192" target="_blank">
+                    <i class="fa-brands fa-whatsapp text-orange-500 text-4xl"></i>
+                </a>
+                <a href="https://www.instagram.com/tjmx_travel/" target="_blank">
+                    <i class="fa-brands fa-instagram text-orange-500 text-4xl"></i>
+                </a>
+            </div>
+        </div>
     </section>
 </body>
 </html>
