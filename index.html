@@ -21,28 +21,26 @@
 </head>
 <body>
     <section class="h-screen bg-cover items-center">
-        <div class="absolute inset-0 z-10 w-full h-full flex" id="background-carousel">
+        <div class="absolute inset-0 z-10 w-full h-full flex overflow-hidden" id="background-carousel">
             <script>
                 const images = [
                     'assets/image/header.jpg',
-                    'assets/image/header.jpg',
-                    'assets/image/header.jpg',
+                    'assets/image/header1.jpg',
+                    'assets/image/header2.jpg',
                 ];
                 let active = 0;
-                const carousels = images.map((images, index) => {
-                    return `<img src="${images}" class="w-full h-full ${index === active ? 'block' : 'hidden' } object-cover relative z-10" alt="Image">`
-                    console.log(active);
-                }).join('');
+                function Carousel(){
+                    const carousels = images.map((images, index) => {
+                        return `<img src="${images}" class="w-full h-full ${index === active ? 'block' : 'hidden' } object-cover relative z-10" alt="Image">`
+                    });
+                    document.getElementById('background-carousel').innerHTML = carousels;
+                }
+                Carousel();
                 setInterval(() => {
-                    if(active >= 2){
-                        active = 0;
-                    }
-                    else{
-                        active++;
-                    }
+                    active = (active + 1) % images.length;
+                    Carousel();
                     console.log(active);
                 }, 4000);
-                document.getElementById('background-carousel').innerHTML = carousels;
             </script>
         </div>
         <div class="relative z-20 mx-auto w-fit mt-5">
