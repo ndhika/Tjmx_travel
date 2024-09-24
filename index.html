@@ -20,7 +20,18 @@
                 'lato' : ['Lato', 'sans-serif'],
                 'open-sans' : ['Open Sans', 'sans-serif'],
                 'montserrat' : ['Montserrat', 'serif']
-            }
+            },
+            fontSize : {
+              xxs: "0.65rem",
+              xs: "0.75rem",
+              sm: '0.8rem',
+              base: '1rem',
+              xl: '1.25rem',
+              '2xl': '1.563rem',
+              '3xl': '1.953rem',
+              '4xl': '2.441rem',
+              '5xl': '3.052rem',
+            },
           },
       };
     </script>
@@ -42,7 +53,7 @@
           function Carousel() {
             const carousels = images
               .map((images) => {
-                return `<img src="${images}" class="w-screen h-screen object-cover lg: z-10" alt="Image">`;
+                return `<img src="${images}" class="w-screen h-screen object-cover lg: z-10" alt="Image">`
               })
               .join("");
             return carousels;
@@ -87,16 +98,14 @@
         </div>
       </div>
     </section>
-    <section class="h-screen bg-[#fdf6ea] p-10 flex justify-around">
-      <div class="pt-28 h-fit w-5/12">
-        <div
-          class="bg-[#ff8c00] w-9 h-9 mb-5 rounded-full flex justify-center items-center"
-        >
-          <i class="fa-solid fa-location-dot text-2xl text-white"></i>
+    <section class="h-screen bg-[#fdf6ea] md:pt-5 md:px-12 lg:pt-10 lg:pl-20 flex gap-10 justify-end">
+      <div class="lg:pt-28 h-fit w-6/12">
+        <div class="bg-[#ff8c00] md:w-8 md:h-8 lg:w-9 lg:h-9 mb-5 rounded-full flex justify-center items-center">
+          <i class="fa-solid fa-location-dot md:text-xl lg:text-2xl text-white"></i>
         </div>
-        <h1 class="text-5xl text-black font-bold">Travel made easy</h1>
+        <h1 class="md:text-4xl lg:text-5xl text-black font-bold">Travel made easy</h1>
         <div class="w-full mt-5">
-            <p class="font-sans tracking-wider leading-6">
+            <p class="font-sans md:text-sm lg:text-base tracking-wider leading-6">
                 Write a paragraph that talks about your company here. You can talk
                 about your company's background, history, mission, vision, or
                 philosophy. Anything that will introduce your brand's persona to your
@@ -105,21 +114,21 @@
             </p>
         </div>
         <div class="flex gap-6 justify-start mt-8">
-            <div class="w-fit h-fit bg-[#ff8c00] px-6 py-2 rounded-full flex items-center justify-center">
-                <a class="text-sm font-montserrat font-semibold tracking-wide text-white">
+            <div class="md:w-36 lg:w-fit lg:h-fit bg-[#ff8c00] md:px-6 md:py-2 lg:px-6 lg:py-3 rounded-full flex items-center">
+                <a class="md:text-xxs lg:text-sm font-montserrat font-semibold tracking-normal text-white">
                     LATEST PROMOS
                 </a>
             </div>
-            <div class="w-fit h-fit bg-[#ff8c00] px-6 py-2 rounded-full flex items-center justify-center">
-                <a class="text-sm font-montserrat font-semibold tracking-wide text-white">
+            <div class="md:w-36 lg:w-fit lg:h-fit bg-[#ff8c00] md:px-6 md:py-2 lg:px-6 lg:py-3 rounded-full flex items-center justify-center">
+                <a class="md:text-xxs lg:text-sm font-montserrat font-semibold tracking-wide text-white">
                     OUR OFFERINGS
                 </a>
             </div>
         </div>
       </div>
-      <div class="w-fit h-fit">
-        <div class="mt-5">
-          <img src="assets/image/about.png" width="450" />
+      <div class="w-6/12 h-fit">
+        <div class="lg:w-10/12 mt-5">
+          <img src="assets/image/about.png" class="w-full"/>
         </div>
       </div>
     </section>
