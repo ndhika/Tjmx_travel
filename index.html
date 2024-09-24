@@ -4,22 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TjmxTravel</title>
+
+    <!-- Web Icon-->
     <link rel="icon" href="assets/icon/Tjmx_travel.svg" type="image/svg+xml" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Small Icons Across Website -->
     <script
       src="https://kit.fontawesome.com/3ab26b6439.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Tailwind CSS-->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
+            extend : {
+              backgroundImage : {
+                'rute-bandung-jabodetabek' : "url('assets/image/bandung-jabodetabek.png')",
+                'rute-bandung-subang' : "url('assets/image/bandung-subang.png')", 
+                'rute-bandung-sumedang' : "url('assets/image/bandung-sumedang.png')",
+                'carter-drop' : "url('assets/image/carter-drop.png')",
+              },
+              gridTemplateColumns : {
+                'fit': 'repeat(3, fit-content(100px))'
+              },
+            },
             fontFamily: {
                 'lato' : ['Lato', 'sans-serif'],
                 'open-sans' : ['Open Sans', 'sans-serif'],
-                'montserrat' : ['Montserrat', 'serif']
+                'montserrat' : ['Montserrat', 'serif'],
+                'fira-sans' : ['Fira Sans', 'sans-serif'],
             },
             fontSize : {
               xxxs: "0.6rem",
@@ -32,6 +53,9 @@
               '3xl': '1.953rem',
               '4xl': '2.441rem',
               '5xl': '3.052rem',
+              '6xl': '3.75rem',
+              '7xl': '4.5rem',
+              '8xl': '6rem',
             },
           },
       };
@@ -81,9 +105,9 @@
         <img src="assets/icon/icon.svg" width="100" height="30" class="" />
       </div>
       <div
-        class="w-10/12 md:w-7/12 lg:w-6/12 text-center mx-auto mt-10 md:mt-16 lg:mt-24 relative z-20"
+        class="w-10/12 md:w-7/12 lg:w-7/12 xl:w-5/12 2xl:w-4/12 text-center mx-auto mt-10 md:mt-16 lg:mt-24 relative z-20"
       >
-        <h1 class="text-white drop-shadow-lg text-5xl md:text-6xl lg:text-7xl">
+        <h1 class="text-white drop-shadow-lg font-medium text-5xl lg:text-6xl xl:text-7xl">
           Bersama Kami Perjalanan Lebih Mudah
         </h1>
         <h1 class="text-white md:text-2xl lg:text-3xl font-bold mt-4">
@@ -99,7 +123,7 @@
         </div>
       </div>
     </section>
-    <section class="h-fit md:h-screen bg-[#fdf6ea] md:pt-5 md:px-12 lg:pt-10 lg:pl-20 flex flex-col-reverse md:flex-row gap-10 justify-end">
+    <section class="h-fit md:h-screen bg-[#fdf6ea] pb-5 md:pb-0 md:pt-5 md:px-12 lg:pt-10 lg:pl-20 flex flex-col-reverse md:flex-row gap-10 justify-end">
       <div class="lg:pt-28 h-fit md:w-6/12">
         <div class="flex flex-row items-center md:items-start justify-center gap-3 md:gap-0 w-full md:flex-col">
           <div class="bg-[#ff8c00] w-7 h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 md:mb-4 rounded-full flex justify-center items-center">
@@ -132,6 +156,76 @@
       <div class="w-9/12 md:w-6/12 h-fit mx-auto md:mx-0">
         <div class="lg:w-10/12 mt-5">
           <img src="assets/image/about.png" class="w-full"/>
+        </div>
+      </div>
+    </section>
+    <section class="h-fit bg-[#504128] pt-8 px-14 pb-10">
+      <h1 class="w-fit mx-auto font-fira-sans text-5xl font-semibold tracking-tighter text-white">Rute</h1>
+      <div class="grid grid-cols-1 md:grid-cols-fit justify-center mt-4 gap-10">
+        <div class="justify-self-center w-64 h-96 md:w-52 md:h-72 lg:w-64 lg:h-96 flex flex-col justify-between items-center pb-5 px-5 bg-rute-bandung-jabodetabek bg-no-repeat bg-cover">
+          <div class="flex justify-center items-center flex-grow">
+            <div class="flex flex-col items-center">
+              <h1 class="font-fira-sans text-3xl w-fit text-white font-semibold">Bandung</h1>
+              <div class="flex text-white gap-1">
+                <i class="fa-solid fa-arrow-down"></i>
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+              <h1 class="font-fira-sans text-3xl w-fit text-white font-semibold">Jabodetabek</h1>
+            </div>
+          </div>
+          <div class="w-32 h-fit md:w-36 lg:w-full lg:h-fit bg-[#ff8c00] px-5 py-2 md:px-6 md:py-2 lg:px-6 lg:py-3 rounded-full flex justify-center items-center mx-auto">
+            <a class="text-xxxs md:text-xxs lg:text-sm font-montserrat font-semibold tracking-wide text-white">
+                BOOK NOW
+            </a>
+          </div>
+        </div>
+        <div class="justify-self-center w-64 h-96 md:w-52 md:h-72 lg:w-64 lg:h-96 flex flex-col justify-between items-center pb-5 px-5 bg-rute-bandung-subang bg-no-repeat bg-cover">
+          <div class="flex justify-center items-center flex-grow">
+            <div class="flex flex-col items-center">
+              <h1 class="font-fira-sans text-3xl w-fit text-white font-semibold">Bandung</h1>
+              <div class="flex text-white gap-1">
+                <i class="fa-solid fa-arrow-down"></i>
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+              <h1 class="font-fira-sans text-lg w-fit text-white font-semibold">Subang, Indramayu, Cirebon</h1>
+            </div>
+          </div>
+          <div class="w-32 h-fit md:w-36 lg:w-full lg:h-fit bg-[#ff8c00] px-5 py-2 md:px-6 md:py-2 lg:px-6 lg:py-3 rounded-full flex justify-center items-center mx-auto">
+            <a class="text-xxxs md:text-xxs lg:text-sm font-montserrat font-semibold tracking-wide text-white">
+                BOOK NOW
+            </a>
+          </div>
+        </div>
+        <div class="justify-self-center w-64 h-96 md:w-52 md:h-72 lg:w-64 lg:h-96 flex flex-col justify-between items-center pb-5 px-5 bg-rute-bandung-sumedang bg-no-repeat bg-cover">
+          <div class="flex justify-center items-center flex-grow">
+            <div class="flex flex-col items-center">
+              <h1 class="font-fira-sans text-3xl w-fit text-white font-semibold">Bandung</h1>
+              <div class="flex text-white gap-1">
+                <i class="fa-solid fa-arrow-down"></i>
+                <i class="fa-solid fa-arrow-up"></i>
+              </div>
+              <h1 class="font-fira-sans text-lg w-fit text-white font-semibold">Sumedang, Majalengka, Tegal</h1>
+            </div>
+          </div>
+          <div class="w-32 h-fit md:w-36 lg:w-full lg:h-fit bg-[#ff8c00] px-5 py-2 md:px-6 md:py-2 lg:px-6 lg:py-3 rounded-full flex justify-center items-center mx-auto">
+            <a class="text-xxxs md:text-xxs lg:text-sm font-montserrat font-semibold tracking-wide text-white">
+                BOOK NOW
+            </a>
+          </div>
+        </div>
+        <div></div>
+        <div class="justify-self-center w-64 h-96 md:w-52 md:h-72 lg:w-64 lg:h-96 flex flex-col justify-between items-center pb-5 px-5 bg-carter-drop bg-no-repeat bg-cover">
+          <div class="flex justify-center items-center flex-grow">
+            <div class="flex flex-col items-center">
+              <h1 class="font-fira-sans text-xl w-fit text-white font-semibold">Carter Drop - Bandara</h1>
+              <h1 class="font-fira-sans text-lg w-fit text-white font-semibold">Keberangkatan setiap hari</h1>
+            </div>
+          </div>
+          <div class="w-32 h-fit md:w-36 lg:w-full lg:h-fit bg-[#ff8c00] px-5 py-2 md:px-6 md:py-2 lg:px-6 lg:py-3 rounded-full flex justify-center items-center mx-auto">
+            <a class="text-xxxs md:text-xxs lg:text-sm font-montserrat font-semibold tracking-wide text-white">
+                BOOK NOW
+            </a>
+          </div>
         </div>
       </div>
     </section>
