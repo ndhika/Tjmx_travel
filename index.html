@@ -7,7 +7,7 @@
     <link rel="icon" href="assets/icon/Tjmx_travel.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <script
       src="https://kit.fontawesome.com/3ab26b6439.js"
       crossorigin="anonymous"
@@ -16,15 +16,12 @@
     <script>
       tailwind.config = {
         theme: {
-          extend: {
-            backgroundImage: {
-              banner: "url('assets/image/header.jpg')",
-            },
             fontFamily: {
-                'Sans' : ['Open Sans']
+                'lato' : ['Lato', 'sans-serif'],
+                'open-sans' : ['Open Sans', 'sans-serif'],
+                'montserrat' : ['Montserrat', 'serif']
             }
           },
-        },
       };
     </script>
   </head>
@@ -107,9 +104,21 @@
                 hopefully leads into a working relationship.
             </p>
         </div>
+        <div class="flex gap-6 justify-start mt-8">
+            <div class="w-fit h-fit bg-[#ff8c00] px-6 py-2 rounded-full flex items-center justify-center">
+                <a class="text-sm font-montserrat font-semibold tracking-wide text-white">
+                    LATEST PROMOS
+                </a>
+            </div>
+            <div class="w-fit h-fit bg-[#ff8c00] px-6 py-2 rounded-full flex items-center justify-center">
+                <a class="text-sm font-montserrat font-semibold tracking-wide text-white">
+                    OUR OFFERINGS
+                </a>
+            </div>
+        </div>
       </div>
       <div class="w-fit h-fit">
-        <div>
+        <div class="mt-5">
           <img src="assets/image/about.png" width="450" />
         </div>
       </div>
