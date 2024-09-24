@@ -1,76 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TjmxTravel</title>
-    <link rel="icon" href="assets/icon/Tjmx_travel.svg" type="image/svg+xml">
-    <script src="https://kit.fontawesome.com/3ab26b6439.js" crossorigin="anonymous"></script> 
+    <link rel="icon" href="assets/icon/Tjmx_travel.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script
+      src="https://kit.fontawesome.com/3ab26b6439.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme : {
-                extend : {
-                    backgroundImage : {
-                        'banner' : "url('assets/image/header.jpg')"
-                    }
-                }
+      tailwind.config = {
+        theme: {
+          extend: {
+            backgroundImage: {
+              banner: "url('assets/image/header.jpg')",
+            },
+            fontFamily: {
+                'Sans' : ['Open Sans']
             }
-        }
+          },
+        },
+      };
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <section class="h-screen bg-cover items-center">
-        <div class="absolute inset-0 z-10 w-full h-full overflow-hidden" id="background-carousel">
-            <script>
-                const images = [
-                    'assets/image/header.jpg',
-                    'assets/image/header1.jpg',
-                    'assets/image/header2.jpg',
-                ];
-                let active = 0;
-                let index = 0;
-                function Carousel(){
-                    const carousels = images.map((images) => {
-                        return `<img src="${images}" class="w-screen h-screen object-cover lg: z-10" alt="Image">`
-                    }).join('');
-                    return carousels;
-                }
-                const carouselDiv = document.createElement('div');
-                carouselDiv.className = "flex transition-transform duration-500 ease-in-out";
-                document.getElementById('background-carousel').appendChild(carouselDiv);
-                carouselDiv.innerHTML = Carousel();
-                function updatedCarousel(){
-                    carouselDiv.style.transform = `translateX(-${index * 100}%)`;
-                }
-                updatedCarousel();
-                setInterval(() => {
-                    active = (active + 1) % images.length;
-                    index = (index + 1) % images.length;
-                    updatedCarousel();
-                    console.log(active);
-                    console.log(index);
-                }, 4000);
-            </script>
+      <div
+        class="absolute z-10 w-full h-full overflow-hidden"
+        id="background-carousel"
+      >
+        <script>
+          const images = [
+            "assets/image/header.jpg",
+            "assets/image/header3.jpg",
+            "assets/image/header2.jpg",
+          ];
+          let active = 0;
+          let index = 0;
+          function Carousel() {
+            const carousels = images
+              .map((images) => {
+                return `<img src="${images}" class="w-screen h-screen object-cover lg: z-10" alt="Image">`;
+              })
+              .join("");
+            return carousels;
+          }
+          const carouselDiv = document.createElement("div");
+          carouselDiv.className =
+            "flex transition-transform duration-500 ease-in-out";
+          document
+            .getElementById("background-carousel")
+            .appendChild(carouselDiv);
+          carouselDiv.innerHTML = Carousel();
+          function updatedCarousel() {
+            carouselDiv.style.transform = `translateX(-${index * 100}%)`;
+          }
+          updatedCarousel();
+          setInterval(() => {
+            active = (active + 1) % images.length;
+            index = (index + 1) % images.length;
+            updatedCarousel();
+          }, 4000);
+        </script>
+      </div>
+      <div class="relative z-20 mx-auto w-fit p-5">
+        <img src="assets/icon/icon.svg" width="100" height="30" class="" />
+      </div>
+      <div
+        class="w-10/12 md:w-7/12 lg:w-6/12 text-center mx-auto mt-10 md:mt-16 lg:mt-24 relative z-20"
+      >
+        <h1 class="text-white drop-shadow-lg text-5xl md:text-6xl lg:text-7xl">
+          Bersama Kami Perjalanan Lebih Mudah
+        </h1>
+        <h1 class="text-white md:text-2xl lg:text-3xl font-bold mt-4">
+          Perjalanan Nyaman, Tujuan Cepat
+        </h1>
+        <div class="mt-36 flex gap-4 justify-center">
+          <a href="https://wa.me/6285137666192" target="_blank">
+            <i class="fa-brands fa-whatsapp text-orange-500 text-4xl"></i>
+          </a>
+          <a href="https://www.instagram.com/tjmx_travel/" target="_blank">
+            <i class="fa-brands fa-instagram text-orange-500 text-4xl"></i>
+          </a>
         </div>
-        <div class="relative z-20 mx-auto w-fit mt-5">
-            <img src="assets/icon/icon.svg" width="100" height="30" class="">
-        </div>
-        <div class="w-10/12 md:w-7/12 lg:w-6/12 text-center mx-auto mt-10 md:mt-16 lg:mt-24 relative z-20">
-            <h1 class="text-white text-5xl md:text-6xl lg:text-7xl">Bersama Kami Perjalanan Lebih Mudah</h1>
-            <h1 class="text-white md:text-2xl lg:text-3xl font-bold mt-4">Perjalanan Nyaman, Tujuan Cepat</h1>
-            <div class="mt-36 flex gap-4 justify-center">
-                <a href="https://wa.me/6285137666192" target="_blank">
-                    <i class="fa-brands fa-whatsapp text-orange-500 text-4xl"></i>
-                </a>
-                <a href="https://www.instagram.com/tjmx_travel/" target="_blank">
-                    <i class="fa-brands fa-instagram text-orange-500 text-4xl"></i>
-                </a>
-            </div>
-        </div>
+      </div>
     </section>
-    <section class="h-screen">
-
+    <section class="h-screen bg-[#fdf6ea] p-10 flex justify-around">
+      <div class="pt-28 h-fit w-5/12">
+        <div
+          class="bg-[#ff8c00] w-9 h-9 mb-5 rounded-full flex justify-center items-center"
+        >
+          <i class="fa-solid fa-location-dot text-2xl text-white"></i>
+        </div>
+        <h1 class="text-5xl text-black font-bold">Travel made easy</h1>
+        <div class="w-full mt-5">
+            <p class="font-sans tracking-wider leading-6">
+                Write a paragraph that talks about your company here. You can talk
+                about your company's background, history, mission, vision, or
+                philosophy. Anything that will introduce your brand's persona to your
+                clients. This will help build a connection between you and them, that
+                hopefully leads into a working relationship.
+            </p>
+        </div>
+      </div>
+      <div class="w-fit h-fit">
+        <div>
+          <img src="assets/image/about.png" width="450" />
+        </div>
+      </div>
     </section>
-</body>
+  </body>
 </html>
